@@ -41,5 +41,6 @@ class Product:
                 yon = input("Вы уверены, что хотите снизить цену? (y/n) ")
                 if yon.lower() == "y":
                     self.__price = new_price
+                    print("Цена изменена на:", new_price)
             else:
                 self.__price = new_price

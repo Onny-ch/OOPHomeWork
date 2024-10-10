@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93bfa988-3e31-4ba2-9b48-15218c80c03c" name="Changes" comment="">
+    <list default="true" id="93bfa988-3e31-4ba2-9b48-15218c80c03c" name="Changes" comment="added tests for product class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_product.py" afterDir="false" />
@@ -229,7 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728497528104</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added changes for product class">
+      <option name="closed" value="true" />
+      <created>1728555467619</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1728555467619</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added tests for product class">
+      <option name="closed" value="true" />
+      <created>1728555480246</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1728555480246</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -248,6 +266,8 @@
     <MESSAGE value="changes in main.py for current tasks" />
     <MESSAGE value="gitignore changes" />
     <MESSAGE value="added new tests for class Category" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new tests for class Category" />
+    <MESSAGE value="added changes for product class" />
+    <MESSAGE value="added tests for product class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tests for product class" />
   </component>
 </project>

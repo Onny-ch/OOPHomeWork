@@ -1,5 +1,6 @@
-from src.product import Product
 from unittest.mock import patch
+
+from src.product import Product
 
 
 def test_product_init(product1, product2, product3):
@@ -23,6 +24,7 @@ def test_new_product(product1, product2, product1_dict, product2_dict):
     new_product1 = Product.new_product(product1_dict)
     assert new_product1.quantity == 10
     assert new_product1.price == 200000.0
+
     new_product2 = Product.new_product(product2_dict)
     assert new_product2.name == "Iphone 17"
     assert new_product2.description == "1024Tb, Gray space"
@@ -38,10 +40,10 @@ def test_product_private_price(capsys, product1):
     product1.price = 190000
     assert product1.price == 190000
 
-    with patch('builtins.input', side_effect=['n']):
+    with patch("builtins.input", side_effect=["n"]):
         product1.price = 160000
         assert product1.price == 190000
 
-    with patch('builtins.input', side_effect=['y']):
+    with patch("builtins.input", side_effect=["y"]):
         product1.price = 160000
         assert product1.price == 160000

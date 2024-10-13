@@ -72,3 +72,12 @@ def first_category(product1, product2, product3):
         "но и получения дополнительных функций для удобства жизни",
         products=[product1, product2, product3],
     )
+
+
+@pytest.fixture
+def list_with_category_string():
+    return [
+        "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",
+        "Iphone 15, 210000.0 руб. Остаток: 8 шт.",
+        "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.",
+    ]

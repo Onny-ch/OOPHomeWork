@@ -15,8 +15,8 @@ def product1():
 
 
 @pytest.fixture
-def product1_str():
-    return "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.\n"
+def product1_str(product1):
+    return f'{str(product1)}\n'
 
 
 @pytest.fixture
@@ -35,8 +35,8 @@ def product2():
 
 
 @pytest.fixture
-def product2_str():
-    return "Iphone 15, 210000.0 руб. Остаток: 8 шт.\n"
+def product2_str(product2):
+    return f'{str(product2)}\n'
 
 
 @pytest.fixture
@@ -55,8 +55,8 @@ def product3():
 
 
 @pytest.fixture
-def product3_str():
-    return "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.\n"
+def product3_str(product3):
+    return f'{str(product3)}\n'
 
 
 @pytest.fixture

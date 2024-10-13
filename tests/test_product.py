@@ -47,3 +47,9 @@ def test_product_private_price(capsys, product1):
     with patch("builtins.input", side_effect=["y"]):
         product1.price = 160000
         assert product1.price == 160000
+
+
+def test_product_add(capsys, product1, product2):
+    print(product1 + product2)
+    message = capsys.readouterr()
+    assert message.out.strip() == '2580000.0'

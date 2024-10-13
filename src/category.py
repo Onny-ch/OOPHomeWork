@@ -15,7 +15,7 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(self.__products)
 
-    def __str__(self):
+    def __str__(self) -> str:
         counter = 0
         for prod in self.__products:
             counter += prod.quantity
@@ -32,5 +32,5 @@ class Category:
         """Геттер получения продуктов построчно"""
         products_str = ""
         for product in self.__products:
-            products_str += str(product) + '\n'
+            products_str += str(product) + "\n"
         return products_str

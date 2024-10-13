@@ -16,7 +16,7 @@ def product1():
 
 @pytest.fixture
 def product1_str(product1):
-    return f'{str(product1)}\n'
+    return f"{str(product1)}\n"
 
 
 @pytest.fixture
@@ -36,7 +36,7 @@ def product2():
 
 @pytest.fixture
 def product2_str(product2):
-    return f'{str(product2)}\n'
+    return f"{str(product2)}\n"
 
 
 @pytest.fixture
@@ -56,7 +56,7 @@ def product3():
 
 @pytest.fixture
 def product3_str(product3):
-    return f'{str(product3)}\n'
+    return f"{str(product3)}\n"
 
 
 @pytest.fixture

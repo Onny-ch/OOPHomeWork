@@ -6,14 +6,12 @@ class ProductEnumeration:
         self.object = category_object
         self.a = 0
 
-    def __iter__(self):
-        print(self)
-        print(type(self))
+    def __iter__(self) -> "ProductEnumeration":
         return self
 
-    def __next__(self):
-        products = self.object.products.split('\n')
-        products.remove('')
+    def __next__(self) -> str:
+        products = self.object.products.split("\n")
+        products.remove("")
         if self.a < len(products):
             product = products[self.a]
             self.a += 1

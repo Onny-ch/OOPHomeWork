@@ -1,5 +1,4 @@
 from src.product import Product
-from src.product import LawnGrass, Smartphone
 
 
 class Category:

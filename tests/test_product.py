@@ -60,6 +60,7 @@ def test_product_add(capsys, product1, product2):
 def test_product_add_error(second_smartphone, second_lawn_grass):
     with pytest.raises(TypeError):
         res = second_smartphone + second_lawn_grass
+        del res
 
 
 def test_smartphone_init(first_smartphone):

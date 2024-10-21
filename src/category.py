@@ -1,5 +1,5 @@
-from src.product import Product
 from src.base_order import BaseOrder
+from src.product import Product
 
 
 class Category(BaseOrder):

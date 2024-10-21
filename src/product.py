@@ -1,4 +1,5 @@
 from typing import Any
+
 from src.base_product import BaseProduct
 from src.print_mixin import PrintMixin
 
@@ -6,7 +7,7 @@ from src.print_mixin import PrintMixin
 class Product(BaseProduct, PrintMixin):
     name: str
     description: str
-    __price: float
+    price: float
     quantity: int
     list_of_products: list[Any] = []
 

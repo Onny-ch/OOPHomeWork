@@ -1,7 +1,9 @@
+import pytest
+
 from src.category import Category
 
 
-def test_counts(first_category, product1, product2, product3):
+def test_counts(first_category):
     assert Category.category_count == 1
     assert Category.product_count == 3
 
@@ -25,3 +27,10 @@ def test_category_str(capsys, first_category):
 
     print(first_category)
     assert capsys.readouterr().out.strip() == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_category_add_product_error(category_smartphones, category_grass, non_product):
+    with pytest.raises(TypeError):
+        category_smartphones.add_product(non_product)
+    with pytest.raises(TypeError):
+        category_grass.add_product(non_product)

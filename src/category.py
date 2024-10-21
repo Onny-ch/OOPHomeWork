@@ -24,8 +24,11 @@ class Category:
 
     def add_product(self, new_product: Product) -> None:
         """Метод добавления нового продукта"""
-        self.__products.append(new_product)
-        Category.product_count += 1
+        if issubclass(new_product.__class__, Product):
+            self.__products.append(new_product)  # if isinstance(new_product, self.__products[0].__class__):
+            Category.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def products(self) -> str:

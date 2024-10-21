@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+import pytest
+
 from src.product import Product
 
 
@@ -53,3 +55,29 @@ def test_product_add(capsys, product1, product2):
     print(product1 + product2)
     message = capsys.readouterr()
     assert message.out.strip() == "2580000.0"
+
+
+def test_product_add_error(second_smartphone, second_lawn_grass):
+    with pytest.raises(TypeError):
+        assert second_smartphone + second_lawn_grass
+
+
+def test_smartphone_init(first_smartphone):
+    assert first_smartphone.name == "Samsung Galaxy S23 Ultra"
+    assert first_smartphone.description == "256GB, Серый цвет, 200MP камера"
+    assert first_smartphone.price == 180000.0
+    assert first_smartphone.quantity == 5
+    assert first_smartphone.efficiency == 95.5
+    assert first_smartphone.model == "S23 Ultra"
+    assert first_smartphone.memory == 256
+    assert first_smartphone.color == "Серый"
+
+
+def test_lawn_grass_init(first_lawn_grass):
+    assert first_lawn_grass.name == "Газонная трава"
+    assert first_lawn_grass.description == "Элитная трава для газона"
+    assert first_lawn_grass.price == 500.0
+    assert first_lawn_grass.quantity == 20
+    assert first_lawn_grass.country == "Россия"
+    assert first_lawn_grass.germination_period == "7 дней"
+    assert first_lawn_grass.color == "Зеленый"

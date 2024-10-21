@@ -26,7 +26,7 @@ def test_category_str(capsys, first_category):
     assert str(first_category) == "Смартфоны, количество продуктов: 27 шт."
 
     print(first_category)
-    assert capsys.readouterr().out.strip() == "Смартфоны, количество продуктов: 27 шт."
+    assert capsys.readouterr().out.strip().split("\n")[-1] == "Смартфоны, количество продуктов: 27 шт."
 
 
 def test_category_add_product_error(category_smartphones, category_grass, non_product):

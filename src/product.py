@@ -1,7 +1,9 @@
 from typing import Any
+from src.base_product import BaseProduct
+from src.print_mixin import PrintMixin
 
 
-class Product:
+class Product(BaseProduct, PrintMixin):
     name: str
     description: str
     __price: float
@@ -9,10 +11,7 @@ class Product:
     list_of_products: list[Any] = []
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
-        self.name = name
-        self.description = description
-        self.__price = price
-        self.quantity = quantity
+        super().__init__(name, description, price, quantity)
         Product.list_of_products.append(self)
 
     def __str__(self) -> str:
@@ -20,7 +19,7 @@ class Product:
 
     def __add__(self, other: "Product") -> float:
         if other.__class__ is self.__class__:  # isinstance(other, self.__class__)
-            add = self.quantity * self.__price + other.quantity * other.price
+            add = self.quantity * self.price + other.quantity * other.price
             return add
         else:
             raise TypeError
@@ -31,28 +30,10 @@ class Product:
         for item in cls.list_of_products:
             if new_product_dict["name"] == item.name:
                 item.quantity += new_product_dict["quantity"]
-                if item.__price < new_product_dict["price"]:
-                    item.__price = new_product_dict["price"]
+                if item.price < new_product_dict["price"]:
+                    item.price = new_product_dict["price"]
                 return item
         return cls(**new_product_dict)
-
-    @property
-    def price(self) -> float:
-        """Геттер цены"""
-        return self.__price
-
-    @price.setter
-    def price(self, new_price: float) -> None:
-        """Сеттер цены с дополнительными проверками"""
-        if new_price <= 0:
-            print("Цена не должна быть нулевая или отрицательная")
-        else:
-            if new_price < self.__price:
-                yon = input("Вы уверены, что хотите снизить цену? (y/n) ")
-                if yon.lower() == "y":
-                    self.__price = new_price
-            else:
-                self.__price = new_price
 
 
 class Smartphone(Product):

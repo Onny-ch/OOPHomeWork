@@ -13,6 +13,7 @@ class Category(BaseOrder):
         self.name = name
         self.description = description
         self.__products = products
+        super().__init__()
         Category.category_count += 1
         Category.product_count += len(self.__products)
 

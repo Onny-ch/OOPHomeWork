@@ -14,6 +14,7 @@ class Order(BaseOrder):
         self.description = description
         self.quantity = quantity
         self.price = price
+        super().__init__()
         # self.current_order_count = True
 
     def __str__(self):

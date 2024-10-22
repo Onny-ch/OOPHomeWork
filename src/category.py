@@ -1,7 +1,8 @@
+from src.base_order import BaseOrder
 from src.product import Product
 
 
-class Category:
+class Category(BaseOrder):
     name: str
     description: str
     __products: list[Product]
@@ -12,6 +13,7 @@ class Category:
         self.name = name
         self.description = description
         self.__products = products
+        super().__init__()
         Category.category_count += 1
         Category.product_count += len(self.__products)
 

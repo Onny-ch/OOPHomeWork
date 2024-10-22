@@ -37,7 +37,7 @@ def test_new_product(product1, product2, product1_dict, product2_dict):
 def test_product_private_price(capsys, product1):
     product1.price = 0
     message = capsys.readouterr()
-    assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert message.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
 
     product1.price = 190000
     assert product1.price == 190000
@@ -54,7 +54,7 @@ def test_product_private_price(capsys, product1):
 def test_product_add(capsys, product1, product2):
     print(product1 + product2)
     message = capsys.readouterr()
-    assert message.out.strip() == "2580000.0"
+    assert message.out.strip().split("\n")[-1] == "2580000.0"
 
 
 def test_product_add_error(second_smartphone, second_lawn_grass):

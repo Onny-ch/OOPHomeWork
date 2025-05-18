@@ -75,6 +75,16 @@ def first_category(product1, product2, product3):
 
 
 @pytest.fixture
+def first_category_with_no_goods(product1, product2, product3):
+    return Category(
+        name="Смартфоны",
+        description="Смартфоны, как средство не только коммуникации, "
+        "но и получения дополнительных функций для удобства жизни",
+        products=[]
+    )
+
+
+@pytest.fixture
 def list_with_category_string():
     return [
         "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",

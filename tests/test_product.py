@@ -86,4 +86,4 @@ def test_lawn_grass_init(first_lawn_grass):
 def test_product_zero_quantity(capsys):
     Product(name='5552" QLED 160000K', description="360-720 круговой обзор VR", price=176724323000.0, quantity=0)
     message = capsys.readouterr()
-    assert message.out.strip() == "Товар с нулевым количеством не может быть добавлен"
+    assert message.out.strip().split("\n")[0] == "Товар с нулевым количеством не может быть добавлен"

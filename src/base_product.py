@@ -22,6 +22,10 @@ class BaseProduct(ABC):
                 raise ZeroQuantityItem("Товар с нулевым количеством не может быть добавлен")
         except ZeroQuantityItem as e:
             print(e)
+        else:
+            print("Товар успешно добавлен")
+        finally:
+            print("Обработка добавления товара завершена")
 
     @property
     def price(self) -> float:

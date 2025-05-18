@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from src.exceptions import ZeroQuantityItem
+
 
 class BaseProduct(ABC):
     name: str
@@ -17,9 +19,9 @@ class BaseProduct(ABC):
                 self.quantity = quantity
                 super().__init__()
             else:
-                raise ValueError
-        except ValueError:
-            print("Товар с нулевым количеством не может быть добавлен")
+                raise ZeroQuantityItem("Товар с нулевым количеством не может быть добавлен")
+        except ZeroQuantityItem as e:
+            print(e)
 
     @property
     def price(self) -> float:

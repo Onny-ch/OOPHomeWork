@@ -39,6 +39,11 @@ if __name__ == "__main__":
         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
         [product4],
     )
+    category2_1 = Category(
+        "Телевизоры",
+        "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+        [],
+    )
 
     print(category2.name)
     print(category2.description)
@@ -47,3 +52,7 @@ if __name__ == "__main__":
 
     print(Category.category_count)
     print(Category.product_count)
+
+    print(Category.average_price_of_goods(category1))
+    print(Category.average_price_of_goods(category2))
+    print(Category.average_price_of_goods(category2_1))

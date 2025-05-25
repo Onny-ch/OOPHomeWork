@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from src.exceptions import ZeroQuantityItem
+
 
 class BaseProduct(ABC):
     name: str
@@ -9,11 +11,21 @@ class BaseProduct(ABC):
 
     @abstractmethod
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
-        self.name = name
-        self.description = description
-        self.__price = price
-        self.quantity = quantity
-        super().__init__()
+        try:
+            if quantity > 0:
+                self.name = name
+                self.description = description
+                self.__price = price
+                self.quantity = quantity
+                super().__init__()
+            else:
+                raise ZeroQuantityItem("Товар с нулевым количеством не может быть добавлен")
+        except ZeroQuantityItem as e:
+            print(e)
+        else:
+            print("Товар успешно добавлен")
+        finally:
+            print("Обработка добавления товара завершена")
 
     @property
     def price(self) -> float:

@@ -34,3 +34,8 @@ def test_category_add_product_error(category_smartphones, category_grass, non_pr
         category_smartphones.add_product(non_product)
     with pytest.raises(TypeError):
         category_grass.add_product(non_product)
+
+
+def test_category_average_price_of_goods(first_category, first_category_with_no_goods):
+    assert first_category.average_price_of_goods() == 140333.3
+    assert first_category_with_no_goods.average_price_of_goods() == 0

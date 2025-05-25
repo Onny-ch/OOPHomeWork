@@ -81,3 +81,9 @@ def test_lawn_grass_init(first_lawn_grass):
     assert first_lawn_grass.country == "Россия"
     assert first_lawn_grass.germination_period == "7 дней"
     assert first_lawn_grass.color == "Зеленый"
+
+
+def test_product_zero_quantity(capsys):
+    Product(name='5552" QLED 160000K', description="360-720 круговой обзор VR", price=176724323000.0, quantity=0)
+    message = capsys.readouterr()
+    assert message.out.strip().split("\n")[0] == "Товар с нулевым количеством не может быть добавлен"
